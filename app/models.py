@@ -20,6 +20,7 @@ class Book(models.Model):
         return self.title
 
 class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     customer_name = models.CharField(max_length=100)
     order_date = models.DateTimeField(auto_now_add=True)
