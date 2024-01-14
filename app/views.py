@@ -95,7 +95,7 @@ def create_order(request):
     if request.method == 'GET':
         book_ids = request.query_params.getlist('book_ids', [])
         customer_name = request.query_params.get('customer_name', '')
-        return Response({"book_ids": book_ids, "customer_name": customer_name})
+        return Response({"book_id": book_ids, "customer_name": customer_name})
 
     elif request.method == 'POST':
         serializer = OrderSerializer(data=request.data)
